@@ -19,7 +19,7 @@ Requisitos de software e hardware necessários para executar este projeto de aut
 Abra o git bash, entre no diretório escolhido na sua máquina e faça o download do projeto com o comando abaixo.
 
 ```
-git clone https://github.com/rubens1287/e2e-automation-practice-front-end.git
+git clone https://github.com/rubens1287/e2e-trello-back-end.git
 ```
 
 
