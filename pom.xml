@@ -1,0 +1,166 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>br.com.dbserver</groupId>
+	<artifactId>e2e-trello-back-end</artifactId>
+	<version>1.0</version>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+	</properties>
+
+	<developers>
+		<developer>
+			<id>RubensLobo</id>
+			<name>Rubens Lobo</name>
+			<email>rubens.lobo1287@yahoo.com.br</email>
+		</developer>
+	</developers>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-failsafe-plugin</artifactId>
+				<version>3.0.0-M3</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>integration-test</goal>
+						</goals>
+						<configuration>
+							<systemPropertyVariables>
+								<url>http://automationpractice.com/index.php</url>
+								<browser>chrome</browser>
+							</systemPropertyVariables>
+							<!-- UNCOMMENT - To add any exclusions if required -->
+							<!-- <excludes> <exclude>**/*IT*.java</exclude> </excludes> -->
+
+							<includes>
+
+								<!-- UNCOMMENT BELOW LINE - To execute feature files with a single
+									runner -->
+								<!-- <include>**/Default.java</include> -->
+
+								<!-- UNCOMMENT BELOW LINE - To execute feature files with multiple
+									runners -->
+								<include>**/*Runner*</include>
+							</includes>
+
+							<!-- OPTIONAL UNCOMMENT BELOW 6 LINES - To set data provider thread count value.
+							Default is 10. For executing using parallel or forking -->
+							<!--<properties>
+                               <property>
+                                   <name>dataproviderthreadcount</name>
+                                   <value>4</value>
+                               </property>
+                           </properties>-->
+
+							<!-- OPTIONAL UNCOMMENT BELOW 3 LINES - In case of multiple runners to further reduce times.
+							For executing using parallel -->
+							<!-- <parallel>classes</parallel>
+							<threadCount>4</threadCount>
+							<perCoreThreadCount>true</perCoreThreadCount> -->
+
+							<!-- UNCOMMENT BELOW 3 LINES - To execute using forking
+								option -->
+							<!-- <forkCount>2</forkCount>
+							<reuseForks>true</reuseForks>
+							<reportsDirectory>${project.build.directory}/failsafe-reports_${surefire.forkNumber}</reportsDirectory> -->
+
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>com.trivago.rta</groupId>
+				<artifactId>cluecumber-report-plugin</artifactId>
+				<version>2.3.1</version>
+				<executions>
+					<execution>
+						<id>report</id>
+						<phase>post-integration-test</phase>
+						<goals>
+							<goal>reporting</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<sourceJsonReportDirectory>${project.build.directory}/json-cucumber-reports</sourceJsonReportDirectory>
+					<generatedHtmlReportDirectory>${project.build.directory}/generated-report</generatedHtmlReportDirectory>
+					<expandStepHooks>true</expandStepHooks>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<dependencies>
+
+		<!--Java Faker  https://github.com/DiUS/java-faker -->
+		<dependency>
+			<groupId>com.github.javafaker</groupId>
+			<artifactId>javafaker</artifactId>
+			<version>0.16</version>
+		</dependency>
+
+		<!-- Rest Assured para teste de Back-End -->
+		<dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>rest-assured</artifactId>
+			<version>3.1.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>json-path</artifactId>
+			<version>3.1.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>xml-path</artifactId>
+			<version>3.1.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>json-schema-validator</artifactId>
+			<version>3.1.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>6.14.3</version>
+		</dependency>
+
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-java</artifactId>
+			<version>4.2.6</version>
+		</dependency>
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-testng</artifactId>
+			<version>4.2.6</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.maven</groupId>
+			<artifactId>maven-model</artifactId>
+			<version>3.3.9</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-net</groupId>
+			<artifactId>commons-net</artifactId>
+			<version>3.6</version>
+		</dependency>
+
+	</dependencies>
+</project>
