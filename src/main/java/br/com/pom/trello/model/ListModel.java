@@ -1,6 +1,6 @@
 package br.com.pom.trello.model;
 
-public class List {
+public class ListModel {
 
     private String id;
     private String name;
