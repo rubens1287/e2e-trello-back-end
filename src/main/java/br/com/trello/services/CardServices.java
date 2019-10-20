@@ -35,8 +35,8 @@ public class CardServices implements Headers {
         httpRequest.header("content-type",HEADER_JSON);
         httpRequest.header("content-type",HEADER_CHARSET);
         response = httpRequest.post(url);
-        Assert.assertEquals(response.statusCode(),200);
         ExtentReports.appendToReport("Response: " +response.body().prettyPrint());
+        Assert.assertEquals(response.statusCode(),200);
         return response.getBody().jsonPath().get("id");
     }
 
@@ -53,8 +53,8 @@ public class CardServices implements Headers {
         httpRequest.header("content-type",HEADER_JSON);
         httpRequest.header("content-type",HEADER_CHARSET);
         response = httpRequest.put(url);
-        Assert.assertEquals(response.statusCode(),200);
         ExtentReports.appendToReport("Response: " +response.body().prettyPrint());
+        Assert.assertEquals(response.statusCode(),200);
     }
 
     /**
@@ -70,8 +70,8 @@ public class CardServices implements Headers {
         httpRequest.header("content-type",HEADER_JSON);
         httpRequest.header("content-type",HEADER_CHARSET);
         response = httpRequest.put(url);
-        Assert.assertEquals(response.statusCode(),200);
         ExtentReports.appendToReport("Response: " +response.body().prettyPrint());
+        Assert.assertEquals(response.statusCode(),200);
     }
 
 }

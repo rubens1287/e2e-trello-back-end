@@ -33,10 +33,9 @@ public class BoardServices implements Headers {
         httpRequest.header("content-type",HEADER_JSON);
         httpRequest.header("content-type",HEADER_CHARSET);
         ExtentReports.appendToReport("Request: " + url);
-
         response = httpRequest.post(url);
-        Assert.assertEquals(response.getStatusCode(),200);
         ExtentReports.appendToReport("Response: " +response.body().jsonPath().prettyPrint());
+        Assert.assertEquals(response.getStatusCode(),200);
         return response.getBody().jsonPath().get("id");
     }
 
@@ -52,7 +51,7 @@ public class BoardServices implements Headers {
         httpRequest.header("content-type",HEADER_JSON);
         httpRequest.header("content-type",HEADER_CHARSET);
         response = httpRequest.delete(url);
-        Assert.assertEquals(response.getStatusCode(),200);
         ExtentReports.appendToReport("Response: " +response.body().jsonPath().prettyPrint());
+        Assert.assertEquals(response.getStatusCode(),200);
     }
 }

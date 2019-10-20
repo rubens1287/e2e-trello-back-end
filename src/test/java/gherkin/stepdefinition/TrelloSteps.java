@@ -44,7 +44,7 @@ public class TrelloSteps {
     @E("crio as colunas")
     public void crioAsColunas(DataTable dataTable) {
 
-        String colunasExistentes[];
+        String[] colunasExistentes;
         List<Map<String,String>> table = dataTable.asMaps();
 
         for (Map<String,String> row : table){
