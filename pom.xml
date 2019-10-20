@@ -33,10 +33,6 @@
 							<goal>integration-test</goal>
 						</goals>
 						<configuration>
-							<systemPropertyVariables>
-								<url>http://automationpractice.com/index.php</url>
-								<browser>chrome</browser>
-							</systemPropertyVariables>
 							<!-- UNCOMMENT - To add any exclusions if required -->
 							<!-- <excludes> <exclude>**/*IT*.java</exclude> </excludes> -->
 

@@ -7,6 +7,8 @@ Funcionalidade: Trello
 
    Cenario: CT001 - Trello - Realizar fluxo manipulação de board
     Dado eu crio um quadro
+     |QUADRO  |
+     |DBServer|
     E crio as colunas
      |COLUNAS                              |
      |Backlog,ToDo,in Progress,Testing,Done|
