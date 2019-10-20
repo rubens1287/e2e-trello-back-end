@@ -1,9 +1,9 @@
-package br.com.pom.trello.services;
+package br.com.trello.services;
 
 import br.com.core.report.ExtentReports;
-import br.com.pom.trello.interfaces.Headers;
-import br.com.pom.trello.model.Credentials;
-import br.com.pom.trello.model.Environment;
+import br.com.trello.interfaces.Headers;
+import br.com.trello.model.Credentials;
+import br.com.trello.model.Environment;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.testng.Assert;

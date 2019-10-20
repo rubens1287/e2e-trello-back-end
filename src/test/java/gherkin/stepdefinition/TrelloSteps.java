@@ -1,12 +1,11 @@
 package gherkin.stepdefinition;
 
-import br.com.pom.trello.services.BoardServices;
-import br.com.pom.trello.services.CardServices;
-import br.com.pom.trello.services.ListServices;
+import br.com.trello.services.BoardServices;
+import br.com.trello.services.CardServices;
+import br.com.trello.services.ListServices;
 import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.E;
 import cucumber.api.java.pt.Entao;
-import cucumber.api.java.pt.Quando;
 import io.cucumber.datatable.DataTable;
 import org.testng.Assert;
 

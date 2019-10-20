@@ -1,7 +1,7 @@
-package br.com.pom.trello.model;
+package br.com.trello.model;
 
 import br.com.core.properties.PropertiesManager;
-import br.com.pom.trello.interfaces.Property;
+import br.com.trello.interfaces.Property;
 
 public class Environment implements Property {
 

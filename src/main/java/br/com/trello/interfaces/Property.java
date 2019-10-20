@@ -1,4 +1,4 @@
-package br.com.pom.trello.interfaces;
+package br.com.trello.interfaces;
 
 public interface Property {
     String PATH_PROPERTY = "./src/test/resources/trello.properties";

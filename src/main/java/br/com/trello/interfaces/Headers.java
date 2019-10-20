@@ -1,4 +1,4 @@
-package br.com.pom.trello.interfaces;
+package br.com.trello.interfaces;
 
 public interface Headers {
     String HEADER_JSON = "application/json";
