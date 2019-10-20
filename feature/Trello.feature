@@ -11,15 +11,15 @@ Funcionalidade: Trello
      |DBServer|
     E crio as colunas
      |COLUNAS                              |
-     |Backlog,ToDo,in Progress,Testing,Done|
-    Quando eu criar o cartao
-     |CARD |COLUNA |
-     |teste|Backlog|
+     |Backlog,ToDo,In Progress,Testing,Done|
+    E crio um cartao
+     |CARD |
+     |Teste|
     E alterar o nome do cartao
      |CARD          |
      |Teste DBServer|
     E mover o cartao para "ToDo"
-    E mover o cartao para " In Progress"
+    E mover o cartao para "In Progress"
     E mover o cartao para "Testing"
     E mover o cartao para "Done"
-    Entao eu excluo o quadro.
+    Entao eu excluo o quadro

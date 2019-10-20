@@ -22,6 +22,18 @@ Abra o git bash, entre no diretório escolhido na sua máquina e faça o downloa
 git clone https://github.com/rubens1287/e2e-trello-back-end.git
 ```
 
+## PROPRIEDADES
+
+Acesse o arquivo no diretório "e2e-trello-back-end\src\test\resources\trello.properties" e preencha as informações conforme abaixo;
+    
+```
+TRELLO_URL=https://api.trello.com
+TRELLO_KEY=<your-key-trello>
+TRELLO_TOKEN=<your-token-trello>
+``` 
+
+Verifique a documentação da API do Trello para gerar suas credencias, acesse https://developers.trello.com/reference/#api-key-tokens
+
 
 ## COMANDO PARA EXECUTAR OS TESTES
 
@@ -46,7 +58,7 @@ Os arquivos com as evidências ficam localizados na pasta target do projeto, est
 Veja os resultados do testes no console com status e também a localização dos arquivos mencionados acima.
 
 <div align="center">
-    <img id="header" src="./src/test/resources/images/resultado1.jpg" />
+    <img id="header" src="./src/test/resources/images/resultado.jpg" />
 </div>
 
 ## AUTOR

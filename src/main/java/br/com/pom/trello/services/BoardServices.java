@@ -33,6 +33,7 @@ public class BoardServices implements Headers {
         httpRequest.header("content-type",HEADER_JSON);
         httpRequest.header("content-type",HEADER_CHARSET);
         ExtentReports.appendToReport("Request: " + url);
+
         response = httpRequest.post(url);
         Assert.assertEquals(response.getStatusCode(),200);
         ExtentReports.appendToReport("Response: " +response.body().jsonPath().prettyPrint());
@@ -44,7 +45,7 @@ public class BoardServices implements Headers {
      * @param idBoard id do quadro kanben
      */
     public void deleteBoard(String idBoard){
-        String url = environment.getUrl() + "/1/boards/"+idBoard+"&key="
+        String url = environment.getUrl() + "/1/boards/"+idBoard+"?key="
                 + credentials.getTrelloKey() + "&token=" + credentials.getTrelloToken();
         ExtentReports.appendToReport("Request: " + url);
         RequestSpecification httpRequest = given();

@@ -67,12 +67,12 @@ public class ListServices implements Headers {
      */
     public String createList(String idBoard, String name){
         String url = environment.getUrl() + "/1/lists?name="+name+"&idBoard="+idBoard+"&key="
-                + credentials.getTrelloKey() + "&token=" + credentials.getTrelloToken();
+                + credentials.getTrelloKey() + "&pos=bottom&token=" + credentials.getTrelloToken();
         ExtentReports.appendToReport("Request: " + url);
         RequestSpecification httpRequest = given();
         httpRequest.header("content-type",HEADER_JSON);
         httpRequest.header("content-type",HEADER_CHARSET);
-        response = httpRequest.put(url);
+        response = httpRequest.post(url);
         Assert.assertEquals(response.statusCode(),200);
         ExtentReports.appendToReport("Response: "+response.body().prettyPrint());
         return response.getBody().jsonPath().get("id");
