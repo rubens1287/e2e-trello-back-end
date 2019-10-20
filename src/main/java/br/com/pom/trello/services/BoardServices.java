@@ -46,6 +46,7 @@ public class BoardServices implements Headers {
     public void deleteBoard(String idBoard){
         String url = environment.getUrl() + "/1/boards/"+idBoard+"&key="
                 + credentials.getTrelloKey() + "&token=" + credentials.getTrelloToken();
+        ExtentReports.appendToReport("Request: " + url);
         RequestSpecification httpRequest = given();
         httpRequest.header("content-type",HEADER_JSON);
         httpRequest.header("content-type",HEADER_CHARSET);

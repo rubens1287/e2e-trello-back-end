@@ -38,7 +38,7 @@ public class ListServices implements Headers {
         httpRequest.header("content-type",HEADER_CHARSET);
         response = httpRequest.get(url);
         Assert.assertEquals(response.statusCode(),200);
-        ExtentReports.appendToReport(response.body().prettyPrint());
+        ExtentReports.appendToReport("Response: " +response.body().prettyPrint());
         return response.getBody().jsonPath().get("lists");
     }
 
@@ -63,13 +63,18 @@ public class ListServices implements Headers {
      * Atualiza o nome de uma coluna no quadro
      * @param idBoard id do quadro kanban
      * @param name nome que será utilizado para atualizar o nome da coluna atual
-     * @return objeto com o retorno da requisição
+     * @return id da coluna
      */
-    public Response createList(String idBoard, String name){
+    public String createList(String idBoard, String name){
+        String url = environment.getUrl() + "/1/lists?name="+name+"&idBoard="+idBoard+"&key="
+                + credentials.getTrelloKey() + "&token=" + credentials.getTrelloToken();
+        ExtentReports.appendToReport("Request: " + url);
         RequestSpecification httpRequest = given();
         httpRequest.header("content-type",HEADER_JSON);
         httpRequest.header("content-type",HEADER_CHARSET);
-        return httpRequest.post(environment.getUrl() + "/1/lists?name="+name+"&idBoard="+idBoard+"&key="
-                + credentials.getTrelloKey() + "&token=" + credentials.getTrelloToken());
+        response = httpRequest.put(url);
+        Assert.assertEquals(response.statusCode(),200);
+        ExtentReports.appendToReport("Response: "+response.body().prettyPrint());
+        return response.getBody().jsonPath().get("id");
     }
 }
