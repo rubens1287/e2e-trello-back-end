@@ -52,6 +52,9 @@ Os arquivos com as evidências ficam localizados na pasta target do projeto, est
  Json Cucumber: [caminho da sua maquina]e2e-automation-practice-front-end\target\json-cucumber-reports\cukejson.json
  Xml TestNG: [caminho da sua maquina]e2e-automation-practice-front-end\target\testng-cucumber-reports\cuketestng.xml
 ```
+<div align="center">
+    <img id="header" src="./src/test/resources/images/evidencia.jpg" />
+</div>
 
 ## LOG NO CONSOLE
 
