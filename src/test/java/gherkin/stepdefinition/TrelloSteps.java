@@ -88,7 +88,7 @@ public class TrelloSteps {
         }
     }
 
-    @E("alterar o nome do cartao")
+    @E("altero o nome do cartao")
     public void alterarONomeDoCartao(DataTable dataTable) {
         List<Map<String,String>> table = dataTable.asMaps();
 
@@ -106,7 +106,7 @@ public class TrelloSteps {
         }
     }
 
-    @E("mover o cartao para {string}")
+    @E("movo o cartao para {string}")
     public void moverOCartaoPara(String listName) {
         for (int i = 0; i < colunas.size() ; i++) {
             if(listName.toUpperCase().contains(colunas.get(i).get("name").toUpperCase())){

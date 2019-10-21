@@ -15,11 +15,11 @@ Funcionalidade: Trello
     E crio um cartao
      |CARD |
      |Teste|
-    E alterar o nome do cartao
+    E altero o nome do cartao
      |CARD          |
      |Teste DBServer|
-    E mover o cartao para "ToDo"
-    E mover o cartao para "In Progress"
-    E mover o cartao para "Testing"
-    E mover o cartao para "Done"
+    E movo o cartao para "ToDo"
+    E movo o cartao para "In Progress"
+    E movo o cartao para "Testing"
+    E movo o cartao para "Done"
     Entao eu excluo o quadro
