@@ -8,7 +8,7 @@ Funcionalidade: Trello
    Cenario: CT001 - Trello - Realizar fluxo manipulação de board
     Dado eu crio um quadro
      |QUADRO  |
-     |DBServer|
+     |TesteQuadro|
     E crio as colunas
      |COLUNAS                              |
      |Backlog,ToDo,In Progress,Testing,Done|
@@ -16,8 +16,8 @@ Funcionalidade: Trello
      |CARD |
      |Teste|
     E altero o nome do cartao
-     |CARD          |
-     |Teste DBServer|
+     |CARD            |
+     |Card TesteQuadro|
     E movo o cartao para "ToDo"
     E movo o cartao para "In Progress"
     E movo o cartao para "Testing"
